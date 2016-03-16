@@ -1,3 +1,5 @@
+[<img src="https://david-dm.org/asotog/squeezebox.svg">](https://david-dm.org/asotog/squeezebox)
+
 # Squeezebox
 Simple Angular 2 accordion component
 

@@ -3,9 +3,10 @@
 # Squeezebox
 Simple Angular 2 accordion component
 
-### TODO: samples coming soon
+### Live Sample
+Running sample can be seen [here](http://plnkr.co/edit/DSNuVy5iOQsFag7FZQcT?p=preview) , but this is not for real use case, so for real usage take a look at the following references: installation via npm, typescript usage, etc
 
-### Installation
+### Installation via npm
 ` npm install squeezebox --save`
 
 ### Typescript Usage

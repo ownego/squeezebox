@@ -50,7 +50,7 @@ map: {
 ```
 
 ### Styles
-Styles needs to be included, imported or copied:
+Styles needs to be included, imported or copied, also feel free to modify the styles:
 ```
 <link rel="stylesheet" href="/node_modules/squeezebox/styles.css">
 ```

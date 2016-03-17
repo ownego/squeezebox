@@ -1,7 +1,9 @@
 [<img src="https://david-dm.org/asotog/squeezebox.svg">](https://david-dm.org/asotog/squeezebox)
 
 # Squeezebox
-Simple Angular 2 accordion component
+Simple Angular 2 accordion component with smooth transitions/animations
+
+<img alt="Screenshot 1" width="300" src="https://raw.githubusercontent.com/asotog/squeezebox/master/screenshot-1.png">
 
 ### Live Sample
 Running sample can be seen [here](http://plnkr.co/edit/DSNuVy5iOQsFag7FZQcT?p=preview) , but this is not for real use case, so for real usage take a look at the following references: installation via npm, typescript usage, etc

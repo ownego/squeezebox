@@ -14,7 +14,7 @@ Running sample can be seen [here](http://plnkr.co/edit/DSNuVy5iOQsFag7FZQcT?p=pr
 ### Typescript Usage
 Import the modules wherever are going to be used:
 
-`import {SqueezeBox, SBItem, SBItemHead, SBItemBody} from 'squeezebox/components/squeezebox';`
+`import {SqueezeBox, SBItem, SBItemHead, SBItemBody} from 'squeezebox/squeezebox';`
 
 Inject the components to the parents component's annotation:
 
@@ -41,6 +41,10 @@ or iterate a data list
     </sb-item>
 </squeezebox>
 ```
+
+### Options
+
+*   multiple:boolean (default: true) => this attribute enable/disable the multiple item expanded at the same time, for example: `... <squeezebox [multiple]="false"> ...` 
 
 ### SystemJS configuration
 Will need to [map](https://github.com/systemjs/systemjs/blob/master/docs/config-api.md#map) the module:

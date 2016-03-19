@@ -5,7 +5,7 @@
 
 import {bootstrap}    from 'angular2/platform/browser';
 import {Component} from 'angular2/core';
-import {SqueezeBox, SBItem, SBItemHead, SBItemBody} from '../components/squeezebox';
+import {SqueezeBox, SBItem, SBItemHead, SBItemBody} from '../squeezebox';
 
 console.info('booting app...');
 
@@ -13,7 +13,7 @@ console.info('booting app...');
     selector: 'app',
     template: `
         <div>
-            <squeezebox>
+            <squeezebox [multiple]="false">
                 <sb-item  *ngFor="#item of itemsList">
                     <sb-item-head>{{item.title}}</sb-item-head>
                     <sb-item-body>{{item.description}}</sb-item-body>

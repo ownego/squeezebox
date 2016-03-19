@@ -1,5 +1,5 @@
-import {Component, ElementRef, Renderer} from 'angular2/core';
-import {SBItem} from './squeezebox';
+import {Component, Input, ContentChildren, QueryList, forwardRef} from 'angular2/core';
+import {SBItem} from './sb-item';
 
 @Component({
     selector: 'squeezebox',
@@ -11,15 +11,21 @@ import {SBItem} from './squeezebox';
 })
 export class SqueezeBox {
     
-    // public items: SBItem[] = [];
-
-    constructor(private el: ElementRef, private renderer: Renderer) {}
+    @Input() multiple: boolean = true
     
-    // addItem(item: SBItem) {
-    //     this.items.push(item);
-    // }  
-}
+    @ContentChildren(forwardRef(() => SBItem)) items: QueryList<SBItem>;
+    
+    constructor() {}
+    
+    didItemToggled(item: SBItem) {
+        // on not multiple, it will collpase the rest of items
+        if (!this.multiple) {
+            this.items.toArray().forEach(function(i) { 
+                if (i !== item) {
+                    i.applyToggle(true)
+                }
+            });
+        }
+    }
 
-export * from './sb-item';
-export * from './sb-item-head';
-export * from './sb-item-body';
+}

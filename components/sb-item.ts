@@ -1,6 +1,7 @@
-import {Component, ElementRef, Renderer} from 'angular2/core';
+import {Component, ContentChild} from 'angular2/core';
 import {NgClass} from 'angular2/common';
-import {SBItemBody} from './squeezebox';
+import {SBItemBody} from './sb-item-body';
+import {SqueezeBox} from './squeezebox';
 
 @Component({
     selector: 'sb-item',
@@ -13,16 +14,20 @@ import {SBItemBody} from './squeezebox';
 })
 export class SBItem {
     
-    private collapsed: boolean = true;
+    public collapsed: boolean = true;
+    
+    @ContentChild(SBItemBody) body: SBItemBody;
 
-    public body: SBItemBody = null;
-
-    constructor(private el: ElementRef, private renderer: Renderer) {}
+    constructor(private squeezebox: SqueezeBox) {}
 
     toggle(collapsed: boolean) {
-        this.collapsed = collapsed;
-        if (this.body) {
-            this.body.toggle(collapsed);
-        }
+        this.squeezebox.didItemToggled(this);
+        this.applyToggle(collapsed);
     }
+    
+    applyToggle(collapsed: boolean) {
+        this.collapsed = collapsed;
+        this.body.toggle(collapsed);
+    }
+
 }

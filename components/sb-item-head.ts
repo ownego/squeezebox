@@ -1,5 +1,5 @@
 import {Component, ElementRef, Renderer} from 'angular2/core';
-import {SBItem} from './squeezebox';
+import {SBItem} from './sb-item';
 
 @Component({
     selector: 'sb-item-head',
@@ -10,14 +10,12 @@ import {SBItem} from './squeezebox';
     `
 })
 export class SBItemHead {
-    
-    private collapsed:boolean = true;
 
     constructor(private sbItem: SBItem, private el: ElementRef, private renderer: Renderer) {}
     
     toggleClick(event) {
         event.preventDefault();
-        this.collapsed = !this.collapsed;
-        this.sbItem.toggle(this.collapsed);
+        this.sbItem.collapsed = !this.sbItem.collapsed;
+        this.sbItem.toggle(this.sbItem.collapsed);
     }
 }

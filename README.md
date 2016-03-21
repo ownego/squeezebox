@@ -44,7 +44,7 @@ or iterate a data list
 
 ### Options
 
-*   multiple:boolean (default: true) => this attribute enable/disable the multiple item expanded at the same time, for example: `... <squeezebox [multiple]="false"> ...` 
+*   **multiple:boolean** (default: true) => this attribute enable/disable the multiple item expanded at the same time, for example: `... <squeezebox [multiple]="false"> ...` 
 
 ### SystemJS configuration
 Will need to [map](https://github.com/systemjs/systemjs/blob/master/docs/config-api.md#map) the module:

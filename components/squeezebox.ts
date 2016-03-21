@@ -20,11 +20,8 @@ export class SqueezeBox {
     didItemToggled(item: SBItem) {
         // on not multiple, it will collpase the rest of items
         if (!this.multiple) {
-            this.items.toArray().forEach(function(i) { 
-                if (i !== item) {
-                    i.applyToggle(true)
-                }
-            });
+            this.items.toArray().forEach(i => i.applyToggle(true));
+            item.applyToggle(false);
         }
     }
 

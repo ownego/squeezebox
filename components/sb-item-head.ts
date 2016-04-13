@@ -1,4 +1,4 @@
-import {Component, ElementRef, Renderer} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {SBItem} from './sb-item';
 
 @Component({
@@ -11,7 +11,7 @@ import {SBItem} from './sb-item';
 })
 export class SBItemHead {
 
-    constructor(private sbItem: SBItem, private el: ElementRef, private renderer: Renderer) {}
+    constructor(private sbItem: SBItem) {}
     
     toggleClick(event) {
         event.preventDefault();

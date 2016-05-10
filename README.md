@@ -6,7 +6,7 @@ Simple Angular 2 accordion component with smooth transitions/animations
 <img alt="Screenshot 1" width="300" src="https://raw.githubusercontent.com/asotog/squeezebox/master/screenshot-1.png">
 
 ### Live Sample
-Running sample can be seen [here](http://plnkr.co/edit/x7GyubzSP42f4o4nElpM?p=preview) , but this is not for real use case, so for real usage take a look at the following references: installation via npm, typescript usage, etc
+Running sample can be seen [here](http://plnkr.co/edit/i8hrSBS9SAjK24KaKsaU?p=preview) , but this is not for real use case, so for real usage take a look at the following references: installation via npm, typescript usage, etc
 
 ### Installation via npm
 ` npm install squeezebox --save`

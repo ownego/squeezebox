@@ -1,4 +1,4 @@
-import {Component, ElementRef, Renderer, ViewChild} from 'angular2/core';
+import {Component, ElementRef, Renderer, ViewChild} from '@angular/core';
 
 @Component({
     selector: 'sb-item-body',

@@ -1,10 +1,5 @@
-// typings reference added
-// please see breaking changes under: 
-// https://github.com/angular/angular/blob/master/CHANGELOG.md#user-content-200-beta6-2016-02-11
-///<reference path="../node_modules/angular2/typings/browser.d.ts"/>
-
-import {bootstrap}    from 'angular2/platform/browser';
-import {Component} from 'angular2/core';
+import {bootstrap}    from '@angular/platform-browser-dynamic';
+import {Component} from '@angular/core';
 import {SqueezeBox, SBItem, SBItemHead, SBItemBody} from '../squeezebox';
 
 console.info('booting app...');
@@ -14,7 +9,7 @@ console.info('booting app...');
     template: `
         <div>
             <squeezebox [multiple]="false">
-                <sb-item  *ngFor="#item of itemsList">
+                <sb-item  *ngFor="let item of itemsList">
                     <sb-item-head>{{item.title}}</sb-item-head>
                     <sb-item-body>{{item.description}}</sb-item-body>
                 </sb-item>

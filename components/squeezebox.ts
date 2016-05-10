@@ -1,4 +1,4 @@
-import {Component, Input, ContentChildren, QueryList, forwardRef} from 'angular2/core';
+import {Component, Input, ContentChildren, QueryList, forwardRef} from '@angular/core';
 import {SBItem} from './sb-item';
 
 @Component({

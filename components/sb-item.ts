@@ -1,5 +1,5 @@
-import {Component, ContentChild} from 'angular2/core';
-import {NgClass} from 'angular2/common';
+import {Component, ContentChild} from '@angular/core';
+import {NgClass} from '@angular/common';
 import {SBItemBody} from './sb-item-body';
 import {SqueezeBox} from './squeezebox';
 

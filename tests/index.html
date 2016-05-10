@@ -4,10 +4,31 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <link rel="stylesheet" href="/styles.css">
-    <script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <!--  Shims -->
+    <!-- <script src="/node_modules/@angular/bundles/angular2-polyfills.js"></script> -->
+    <script src="/node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="/node_modules/zone.js/dist/zone.js"></script>
+    <script src="/node_modules/reflect-metadata/Reflect.js"></script>
+    
     <script src="/node_modules/systemjs/dist/system.src.js"></script>
     <!-- Configure SystemJS -->
     <script>
+    var packages = {};
+    var packageNames = [
+       '@angular/common',
+       '@angular/compiler',
+       '@angular/core',
+       '@angular/http',
+       '@angular/platform-browser',
+       '@angular/platform-browser-dynamic',
+       '@angular/router',
+       '@angular/router-deprecated',
+       '@angular/testing',
+       '@angular/upgrade',
+    ];
+    packageNames.forEach(function(pkgName) {
+        packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
+    });
     System.config({
         baseURL: "/",
         defaultJSExtensions: true, 
@@ -16,9 +37,11 @@
         },
         
         map: {
-            "angular2": "npm:angular2",
+            "@angular": "npm:@angular",
             "rxjs": "npm:rxjs"
-        }
+        },
+        
+        packages: packages
     });
     
     System.import('tests/index').then(null, console.error.bind(console));

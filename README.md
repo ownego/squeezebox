@@ -45,6 +45,8 @@ or iterate a data list
 ### Options
 
 *   **multiple:boolean** (default: true) => this attribute enable/disable the multiple item expanded at the same time, for example: `... <squeezebox [multiple]="false"> ...` 
+*   **collapsed:boolean** (default: true) => this attribute enable/disable collapse from the beginning when component is rendered, for example: `... <sb-item [collapsed]="false"> ...`    
+
 
 ### SystemJS configuration
 Will need to [map](https://github.com/systemjs/systemjs/blob/master/docs/config-api.md#map) the module:

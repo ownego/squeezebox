@@ -1,4 +1,4 @@
-import {Component, ContentChild} from '@angular/core';
+import {Component, ContentChild, Input} from '@angular/core';
 import {NgClass} from '@angular/common';
 import {SBItemBody} from './sb-item-body';
 import {SqueezeBox} from './squeezebox';
@@ -14,12 +14,15 @@ import {SqueezeBox} from './squeezebox';
 })
 export class SBItem {
     
-    public collapsed: boolean = true;
+    @Input() public collapsed: boolean = true;
     
     @ContentChild(SBItemBody) body: SBItemBody;
 
     constructor(private squeezebox: SqueezeBox) {}
 
+    ngAfterViewInit() {
+        this.body.toggle(this.collapsed);
+    }
     toggle(collapsed: boolean) {
         this.squeezebox.didItemToggled(this);
         this.applyToggle(collapsed);

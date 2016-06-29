@@ -15,6 +15,20 @@ console.info('booting app...');
                 </sb-item>
             </squeezebox>
         </div>
+
+        <h3>Already expanded</h3>
+        <div>
+            <squeezebox [multiple]="false">
+                <sb-item>
+                    <sb-item-head>Item 1</sb-item-head>
+                    <sb-item-body>Lorem ipsum dolor</sb-item-body>
+                </sb-item>
+                <sb-item [collapsed]="false">
+                    <sb-item-head>Item 2</sb-item-head>
+                    <sb-item-body>Lorem ipsum dolor</sb-item-body>
+                </sb-item>
+            </squeezebox>
+        </div>
     `,
     directives: [SqueezeBox, SBItem, SBItemHead, SBItemBody]
 })

@@ -1,4 +1,4 @@
-import {Component, ContentChild, Input} from '@angular/core';
+import {Component, ContentChild, Input, Inject, forwardRef} from '@angular/core';
 import {SBItemBody} from './sb-item-body';
 import {SqueezeBox} from './squeezebox';
 
@@ -12,12 +12,16 @@ import {SqueezeBox} from './squeezebox';
     `
 })
 export class SBItem {
-    
+
+    private squeezebox:SqueezeBox;
+
     @Input() public collapsed: boolean = true;
     
     @ContentChild(SBItemBody) body: SBItemBody;
 
-    constructor(private squeezebox: SqueezeBox) {}
+    constructor(@Inject(forwardRef(() => SqueezeBox)) squeezebox: SqueezeBox) {
+        this.squeezebox = squeezebox;
+    }
 
     ngAfterViewInit() {
         this.body.toggle(this.collapsed);

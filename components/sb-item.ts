@@ -1,16 +1,15 @@
 import {Component, ContentChild, Input} from '@angular/core';
-import {NgClass} from '@angular/common';
 import {SBItemBody} from './sb-item-body';
 import {SqueezeBox} from './squeezebox';
 
 @Component({
+    exportAs: 'sbItem',
     selector: 'sb-item',
     template: `
         <div class="sb-item" [ngClass]="{'is-collapsed': collapsed}">
             <ng-content></ng-content>
         </div>
-    `,
-    directives: [NgClass]
+    `
 })
 export class SBItem {
     

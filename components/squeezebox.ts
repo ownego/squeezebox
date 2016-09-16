@@ -2,6 +2,7 @@ import {Component, Input, ContentChildren, QueryList, forwardRef} from '@angular
 import {SBItem} from './sb-item';
 
 @Component({
+    exportAs: 'squeezebox',
     selector: 'squeezebox',
     template: `
         <div class="squeezebox">

@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {SBItem} from './sb-item';
 
 @Component({
+    exportAs: 'sbItemHead',
     selector: 'sb-item-head',
     template: `
         <div class="sb-item-head">

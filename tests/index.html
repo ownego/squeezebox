@@ -9,25 +9,9 @@
     <script src="/node_modules/zone.js/dist/zone.js"></script>
     <script src="/node_modules/reflect-metadata/Reflect.js"></script>
     <script src="/node_modules/systemjs/dist/system.src.js"></script>
-
+    
     <!-- Configure SystemJS -->
     <script>
-    var packages = {};
-    var packageNames = [
-       '@angular/common',
-       '@angular/compiler',
-       '@angular/core',
-       '@angular/forms',
-       '@angular/http',
-       '@angular/platform-browser',
-       '@angular/platform-browser-dynamic',
-       '@angular/router',
-       '@angular/router-deprecated',
-       '@angular/upgrade',
-    ];
-    packageNames.forEach(function(pkgName) {
-        packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
-    });
     System.config({
         baseURL: '/',
         defaultJSExtensions: true, 
@@ -38,20 +22,27 @@
         map: {
             '@angular': 'npm:@angular',
             'rxjs': 'npm:rxjs',
-            'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
-        },
-        
-        packages: packages
+            // angular bundles
+            '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+            '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+            '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+            '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+            '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+            '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+            '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+            '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+            'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
+        }
     });
     
     System.import('tests/index').then(null, console.error.bind(console));
     </script>
 </head>
 <style>
-    app {
-        display: block;
-        max-width: 500px;
-    }
+app {
+    display: block;
+    max-width: 500px;
+}
 </style>
 <!-- 3. Display the application -->
 <body>

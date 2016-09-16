@@ -1,6 +1,7 @@
 import {Component, ElementRef, Renderer, ViewChild} from '@angular/core';
 
 @Component({
+    exportAs: 'sbItemBody',
     selector: 'sb-item-body',
     template: `
         <div #body class="sb-item-body" [style.height]="height">

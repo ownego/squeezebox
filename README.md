@@ -12,13 +12,21 @@ Running sample can be seen [here](http://plnkr.co/edit/0rNRNL3GcUxTeZQSiWw3?p=pr
 ` npm install squeezebox --save`
 
 ### Typescript Usage
-Import the modules wherever are going to be used:
+Import the module wherever is going to be used:
 
-`import {SqueezeBox, SBItem, SBItemHead, SBItemBody} from 'squeezebox/squeezebox';`
+`import {SqueezeBoxModule} from 'squeezebox';`
 
-Inject the components to the parents component's annotation:
+Import the module also in your app module, like:
 
-`directives: [SqueezeBox, SBItem, SBItemHead, SBItemBody]`
+```
+@NgModule({
+  imports:      [BrowserModule, SqueezeBoxModule], // here
+  declarations: [AppComponent],
+  bootstrap:    [AppComponent]
+})
+export class AppModule { }
+
+```
 
 Start using it in the component template:
 
@@ -56,6 +64,17 @@ map: {
     ...
 }
 ```
+And set the package configuration:
+```
+packages: {
+      ...
+      squeezebox: { 
+        main: './index.ts',
+        defaultExtension: 'ts' 
+      },
+      ...
+```
+
 
 ### Styles
 Styles needs to be included, imported or copied, also feel free to modify the styles:

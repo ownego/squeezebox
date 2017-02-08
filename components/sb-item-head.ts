@@ -6,7 +6,7 @@ import {SBItem} from './sb-item';
     selector: 'sb-item-head',
     template: `
         <div class="sb-item-head">
-            <a href="#" (click)="toggleClick($event)"><ng-content></ng-content><span class="toggle-icon"></span></a>
+            <a role="button" (click)="toggleClick($event)"><ng-content></ng-content><span class="toggle-icon"></span></a>
         </div>
     `
 })

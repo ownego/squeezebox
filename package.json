@@ -1,6 +1,6 @@
 {
   "name": "squeezebox",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Angular 2 simple accordion component",
   "keywords": [],
   "license": "MIT",
@@ -16,27 +16,27 @@
     "tsc:w": "tsc -w"
   },
   "dependencies": {
-    "@angular/common": "^4.0.3",
-    "@angular/compiler": "^4.0.3",
-    "@angular/core": "^4.0.3",
-    "@angular/forms": "^4.0.3",
-    "@angular/http": "^4.0.3",
-    "@angular/platform-browser": "^4.0.3",
-    "@angular/platform-browser-dynamic": "^4.0.3",
-    "@angular/router": "^4.0.3",
+    "@angular/common": "^4.1.0",
+    "@angular/compiler": "^4.1.0",
+    "@angular/core": "^4.1.0",
+    "@angular/forms": "^4.1.0",
+    "@angular/http": "^4.1.0",
+    "@angular/platform-browser": "^4.1.0",
+    "@angular/platform-browser-dynamic": "^4.1.0",
+    "@angular/router": "^4.1.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "reflect-metadata": "^0.1.10",
     "rxjs": "^5.3.0",
     "systemjs": "^0.20.12",
-    "zone.js": "^0.8.8"
+    "zone.js": "^0.8.9"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.41",
     "@types/jasmine": "^2.5.47",
-    "@types/node": "^7.0.13",
+    "@types/node": "^7.0.14",
     "concurrently": "^3.4.0",
-    "lite-server": "^2.2.2",
-    "typescript": "^2.2.2"
+    "lite-server": "^2.3.0",
+    "typescript": "^2.3.1"
   }
 }

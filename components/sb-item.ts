@@ -1,4 +1,4 @@
-import {Component, ContentChild, Input, Inject, forwardRef} from '@angular/core';
+import {Component, ContentChild, Input, Output, EventEmitter, Inject, forwardRef} from '@angular/core';
 import {SBItemBody} from './sb-item-body';
 import {SqueezeBox} from './squeezebox';
 
@@ -16,7 +16,8 @@ export class SBItem {
     private squeezebox:SqueezeBox;
 
     @Input() public collapsed: boolean = true;
-    
+    @Output() onToggled =  new EventEmitter();
+
     @ContentChild(SBItemBody) body: SBItemBody;
 
     constructor(@Inject(forwardRef(() => SqueezeBox)) squeezebox: SqueezeBox) {
@@ -29,6 +30,7 @@ export class SBItem {
     toggle(collapsed: boolean) {
         this.squeezebox.didItemToggled(this);
         this.applyToggle(collapsed);
+        this.onToggled.emit(collapsed);
     }
     
     applyToggle(collapsed: boolean) {

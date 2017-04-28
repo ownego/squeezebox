@@ -5,7 +5,7 @@ import {Component} from '@angular/core';
     template: `
         <div>
             <squeezebox [multiple]="false">
-                <sb-item  *ngFor="let item of itemsList">
+                <sb-item  *ngFor="let item of itemsList" (onToggled)="itemWasToggled($event)">
                     <sb-item-head>{{item.title}}</sb-item-head>
                     <sb-item-body>{{item.description}}</sb-item-body>
                 </sb-item>
@@ -42,6 +42,10 @@ export class AppComponent {
     
     constructor() {
         
+    }
+
+    itemWasToggled(event) {
+        console.log('collapsed:', event);
     }
     
 }

@@ -50,10 +50,26 @@ or iterate a data list
 </squeezebox>
 ```
 
-### Options
+### Inputs
 
 *   **multiple:boolean** (default: true) => this attribute enable/disable the multiple item expanded at the same time, for example: `... <squeezebox [multiple]="false"> ...` 
-*   **collapsed:boolean** (default: true) => this attribute enable/disable collapse from the beginning when component is rendered, for example: `... <sb-item [collapsed]="false"> ...`    
+*   **collapsed:boolean** (default: true) => this attribute enable/disable collapse from the beginning when component is rendered, for example: `... <sb-item [collapsed]="false"> ...`  
+*   **collapsed:boolean** (default: true) => this attribute enable/disable collapse from the beginning when component is rendered, for example: `... <sb-item [collapsed]="false"> ...`  
+
+### Outputs
+*   **onToggled** => this output is triggered everytime item is expanded or collapsed, returns `true` if collapsed or `false` if expanded, for example:
+```
+<sb-item  *ngFor="let item of itemsList" (onToggled)="itemWasToggled($event)">
+   ...
+</sb-item>
+
+... 
+
+itemWasToggled(event) {
+    console.log('collapsed:', event);
+}
+...
+```
 
 
 ### SystemJS configuration

@@ -11,7 +11,7 @@ import {Component, ElementRef, Renderer, ViewChild} from '@angular/core';
 })
 export class SBItemBody {
 
-    private height: String = '0';
+    public height: String = '0';
 
     @ViewChild('body') bodyEl: ElementRef;
 

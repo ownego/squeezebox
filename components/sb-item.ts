@@ -27,6 +27,7 @@ export class SBItem {
     ngAfterViewInit() {
         this.body.toggle(this.collapsed);
     }
+    
     toggle(collapsed: boolean) {
         this.squeezebox.didItemToggled(this);
         this.applyToggle(collapsed);

@@ -4,26 +4,43 @@ import {Component, ElementRef, Renderer, ViewChild} from '@angular/core';
     exportAs: 'sbItemBody',
     selector: 'sb-item-body',
     template: `
-        <div #body class="sb-item-body" [style.height]="height">
+        <div #body class="sb-item-body" style="height: 0;">
             <div class="inner"><ng-content></ng-content></div>
         </div>
     `
 })
 export class SBItemBody {
 
-    public height: String = '0';
-
     @ViewChild('body') bodyEl: ElementRef;
 
     constructor(private renderer: Renderer) {}
     
+    ngAfterViewInit() {
+        const el = this.bodyEl.nativeElement;
+        el.addEventListener('transitionend', _ => { 
+            // check transition ended, so can use regular height if not expanded
+            if (el.offsetHeight !== 0) {
+                this.setHeight('auto');
+            }
+        }, false);
+    }
+
     toggle(collapsed: boolean) {
-        var height: String = '0';
+        let height: String = '0';
+        const el = this.bodyEl.nativeElement;
+        this.setHeight('auto');
+        height = el.offsetHeight + 'px';
         if (!collapsed) {
-            this.renderer.setElementStyle(this.bodyEl.nativeElement, 'height', 'auto');
-            height = this.bodyEl.nativeElement.offsetHeight + 'px';
-            this.renderer.setElementStyle(this.bodyEl.nativeElement, 'height', '0');
+            this.setHeight('0');
+        } else {
+            this.setHeight(height);
+            height = '0';
         }
-        setTimeout(() => this.height = height, 50);
+        setTimeout(() => this.setHeight(height), 50);
+    }
+
+    setHeight(height) {
+        const el = this.bodyEl.nativeElement;
+        this.renderer.setElementStyle(el, 'height', height);
     }
 }

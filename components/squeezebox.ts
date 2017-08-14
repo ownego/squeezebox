@@ -22,8 +22,8 @@ export class SqueezeBox {
         // on not multiple, it will collpase the rest of items
         if (!this.multiple) {
             this.items.toArray().forEach(function(i) { 
-                if (i !== item) {
-                    i.applyToggle(true)
+                if (i !== item && !i.collapsed) {
+                    i.applyToggle(true);
                 }
             });
         }

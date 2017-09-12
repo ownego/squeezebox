@@ -17,7 +17,7 @@ export class SBItemBody {
     
     ngAfterViewInit() {
         const el = this.bodyEl.nativeElement;
-        el.addEventListener('transitionend', _ => { 
+        el.addEventListener('transitionend', (e:TransitionEvent) => { 
             // check transition ended, so can use regular height if not expanded
             if (el.offsetHeight !== 0) {
                 this.setHeight('auto');
@@ -26,7 +26,7 @@ export class SBItemBody {
     }
 
     toggle(collapsed: boolean) {
-        let height: String = '0';
+        let height: string = '0';
         const el = this.bodyEl.nativeElement;
         this.setHeight('auto');
         height = el.offsetHeight + 'px';
@@ -39,7 +39,7 @@ export class SBItemBody {
         setTimeout(() => this.setHeight(height), 50);
     }
 
-    setHeight(height) {
+    setHeight(height: string) {
         const el = this.bodyEl.nativeElement;
         this.renderer.setElementStyle(el, 'height', height);
     }

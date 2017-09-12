@@ -1,7 +1,8 @@
 node_modules
 dist
 .tscache
-**/*.js
+###**/*.js
+tests/*.js
 **/*.js.map
 tscommand*
 .tmp

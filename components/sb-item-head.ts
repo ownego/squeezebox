@@ -14,7 +14,7 @@ export class SBItemHead {
 
     constructor(private sbItem: SBItem) {}
     
-    toggleClick(event) {
+    toggleClick(event:Event) {
         event.preventDefault();
         this.sbItem.collapsed = !this.sbItem.collapsed;
         this.sbItem.toggle(this.sbItem.collapsed);

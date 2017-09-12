@@ -91,6 +91,14 @@ packages: {
       ...
 ```
 
+If you are not compiling third party javascript, you can try the following configuration so you can use generated files:
+```
+squeezebox: {
+    defaultExtension: 'js',
+    main: 'index.js'
+}
+```
+
 
 ### Styles
 Styles needs to be included, imported or copied, also feel free to modify the styles:

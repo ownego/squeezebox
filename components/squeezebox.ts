@@ -11,18 +11,18 @@ import {SBItem} from './sb-item';
     `
 })
 export class SqueezeBox {
-    
+
     @Input() multiple: boolean = true
-    
+
     @ContentChildren(forwardRef(() => SBItem)) items: QueryList<SBItem>;
-    
+
     constructor() {}
-    
+
     didItemToggled(item: SBItem) {
         // on not multiple, it will collpase the rest of items
         if (!this.multiple) {
-            this.items.toArray().forEach(function(i) { 
-                if (i !== item && !i.collapsed) {
+            this.items.toArray().forEach(function(i) {
+                if (i !== item && !i.expanded) {
                     i.applyToggle(true);
                 }
             });

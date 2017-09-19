@@ -4,7 +4,7 @@ import {Component, ElementRef, Renderer, ViewChild} from '@angular/core';
     exportAs: 'sbItemBody',
     selector: 'sb-item-body',
     template: `
-        <div #body class="sb-item-body" style="height: 0;">
+        <div #body class="sb-item-body" style="height: 0; display: none;">
             <div class="inner"><ng-content></ng-content></div>
         </div>
     `
@@ -14,23 +14,27 @@ export class SBItemBody {
     @ViewChild('body') bodyEl: ElementRef;
 
     constructor(private renderer: Renderer) {}
-    
+
     ngAfterViewInit() {
         const el = this.bodyEl.nativeElement;
-        el.addEventListener('transitionend', (e:TransitionEvent) => { 
+        el.addEventListener('transitionend', (e:TransitionEvent) => {
             // check transition ended, so can use regular height if not expanded
             if (el.offsetHeight !== 0) {
                 this.setHeight('auto');
             }
         }, false);
+
+        setTimeout(() => {
+            this.renderer.setElementStyle(el, 'display', 'block');
+        }, 200);
     }
 
-    toggle(collapsed: boolean) {
+    toggle(expanded: boolean) {
         let height: string = '0';
         const el = this.bodyEl.nativeElement;
         this.setHeight('auto');
         height = el.offsetHeight + 'px';
-        if (!collapsed) {
+        if (expanded) {
             this.setHeight('0');
         } else {
             this.setHeight(height);

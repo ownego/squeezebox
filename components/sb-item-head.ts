@@ -13,10 +13,10 @@ import {SBItem} from './sb-item';
 export class SBItemHead {
 
     constructor(private sbItem: SBItem) {}
-    
+
     toggleClick(event:Event) {
         event.preventDefault();
-        this.sbItem.collapsed = !this.sbItem.collapsed;
-        this.sbItem.toggle(this.sbItem.collapsed);
+        this.sbItem.expanded = !this.sbItem.expanded;
+        this.sbItem.toggle(this.sbItem.expanded);
     }
 }
